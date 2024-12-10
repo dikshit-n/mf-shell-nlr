@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "PORT=5000 nuxt dev",
+    "build:qa": "nuxt build --dotenv .env.qa",
+    "dev": "PORT=5000 nuxt dev --dotenv .env.dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"

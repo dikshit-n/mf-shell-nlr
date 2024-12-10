@@ -1,5 +1,6 @@
 <template>
-  <AppRemote1 />
+  <AppShell />
+  <LazyBaseButton>Base Button</LazyBaseButton>
 </template>
 
 <script setup lang="ts">
