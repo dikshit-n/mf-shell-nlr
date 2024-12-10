@@ -9,8 +9,9 @@ export default defineNuxtConfig({
     port: 5000
   },
   extends: [
+    // ['github:dikshit-n/mf-core-nlr#master', { install: true }],
     ['github:dikshit-n/mf-remote1-nlr#master', { install: true }],
-    ['github:dikshit-n/mf-remote2-nlr#master', { install: true }]
+    ['github:dikshit-n/mf-remote2-nlr#master', { install: true }],
   ],
   app: {
     head: {
