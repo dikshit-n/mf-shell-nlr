@@ -4,6 +4,8 @@
 </template>
 
 <script setup lang="ts">
+const { $moduleConfig } = useNuxtApp();
+console.log($moduleConfig, 'config')
   definePageMeta({
     layout: "base",
   });
