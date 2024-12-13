@@ -1,13 +1,17 @@
-<template>
-  <div>Error occured</div>
-  <p>{{ error.statusCode }}</p>
-  <p>{{ error.message }}</p>
-</template>
-<script lang="ts">
-import type { NuxtError } from '#app';
-import { defineProps } from 'vue'
+<script setup lang="ts">
+import type { NuxtError } from '#app'
 
 defineProps({
   error: Object as () => NuxtError
 })
+
+const handleError = () => clearError({ redirect: '/' })
 </script>
+
+<template>
+  <div>
+    <h2>{{ error.statusCode }}</h2>
+    <p>{{ error.message }}</p>
+    <button @click="handleError">Clear errors</button>
+  </div>
+</template>
