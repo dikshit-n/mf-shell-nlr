@@ -1,6 +1,7 @@
 export default defineNuxtPlugin((nuxtApp) => {
     // Handles logical errors that happens at the rutime
     nuxtApp.hook('vue:error', (error, instance, info) => {
+        console.log('entering vue error')
         // trigger the error.vue component
         showError({
             statusCode: 500,
