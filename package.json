@@ -6,16 +6,18 @@
     "build": "nuxt build --dotenv .env.dev",
     "build:qa": "nuxt build --dotenv .env.qa",
     "dev": "set PORT=5000 && nuxt dev --dotenv .env.dev",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate --dotenv .env.dev",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare --dotenv .env.dev"
   },
   "dependencies": {
+    "@primevue/themes": "^4.2.5",
     "nuxt": "^3.14.1592",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@primevue/nuxt-module": "^4.2.5",
     "sass-embedded": "^1.83.0"
   }
 }

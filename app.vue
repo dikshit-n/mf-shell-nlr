@@ -1,5 +1,30 @@
 <template>
-  <NuxtLayout>
+  <NuxtLayout :routes>
+    <template #title>HealPros Member Care Management</template>
+    <template #headerActions>
+      <div class="header-actions">
+        <i class="pi pi-bell"></i>
+        <i class="pi pi-cog"></i>
+        <Button icon="pi pi-user" variant="outlined" severity="contrast" label="Kurta Sengora" />
+      </div>
+    </template>
     <NuxtPage />
   </NuxtLayout>
 </template>
+
+<script setup>
+import Button from 'primevue/Button'
+  const routes = [
+    { name: 'Service', to: '/administration/service' },
+    { name: 'Members', to: '/member/manage' }
+  ]
+</script>
+
+<style scoped>
+  .header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+</style>
