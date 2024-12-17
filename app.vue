@@ -15,8 +15,6 @@
 <script setup>
 import Button from 'primevue/Button'
 import routes from '@/content/config.json';
-console.log(routes)
-  // const routes = (await queryContent('/config').find())?.[0].body;
 </script>
 
 <style scoped>
