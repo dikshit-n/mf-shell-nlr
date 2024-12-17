@@ -10,10 +10,13 @@ export default defineNuxtConfig({
   devServer: {
     port: 5000
   },
+  build: {
+    transpile: ["rxjs"],
+  },
   extends: [
-    ['github:dikshit-n/mf-core-nlr#master', { install: true }], // contains reusables
-    [`github:dikshit-n/mf-remote1-nlr#master`, { install: true }], // administration micro-frontend
-    [`github:dikshit-n/mf-remote2-nlr#master`, { install: true }], // member micro-frontend
+    ['github:dikshit-n/mf-core-nlr#feat/000_event_bus', { install: true }], // contains reusables
+    [`github:dikshit-n/mf-remote1-nlr#feat/000_event_bus`, { install: true }], // administration micro-frontend
+    [`github:dikshit-n/mf-remote2-nlr#feat/000_event_bus`, { install: true }], // member micro-frontend
   ],
   app: {
     head: {

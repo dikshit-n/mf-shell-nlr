@@ -1,11 +1,12 @@
 <template>
   <NuxtLayout :routes>
     <template #title>HealPros Member Care Management</template>
+    <template>Service Count : {{eventPayload.servicesCount  }}</template>
     <template #headerActions>
       <div class="header-actions">
         <i class="pi pi-bell"></i>
         <i class="pi pi-cog"></i>
-        <Button icon="pi pi-user" variant="outlined" severity="contrast" label="Maximilian" />
+        <Button icon="pi pi-user" variant="outlined" severity="contrast" label="Maximilian" @click="emitUserEvent"/>
       </div>
     </template>
     <NuxtPage />
@@ -15,7 +16,24 @@
 <script setup>
 import Button from 'primevue/Button'
 import routes from '@/content/config.json';
-console.log(routes)
+console.log(routes);
+const eventPayload = ref<any>(null);
+const emitUserEvent = () => {
+  const payload = {
+    message: "User event emitted!",
+    userName: 'Maximilian',
+  };
+  console.log("Emitting Event from shell:", payload);
+  eventBus.emit("shellUserEvent", payload);
+};
+
+onMounted(() => {
+  console.log("shell mounting");
+ eventBus.on("serviceEvent", (payload) => {
+    console.log("Event Received from service:", payload);
+    eventPayload = payload;
+  });
+});
   // const routes = (await queryContent('/config').find())?.[0].body;
 </script>
 
