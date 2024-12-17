@@ -9,12 +9,17 @@
         <Column field="lastUpdated" header="Last Updated" sortable style="width: 25%"></Column>
         <Column field="status" header="Status" sortable style="width: 25%"></Column>
     </DataTable>
+    <PanelMenu />
 </template>
 
 <script setup lang="ts">
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
+import PanelMenu from 'primevue/panelmenu';
+import { useRouter } from 'vue-router';
+
+const data = ref([]);
 onMounted(() => {
-    useRouter().push('/administration/service')
+    useRouter().push('/admin/service')
 });
 </script>

@@ -1,0 +1,34 @@
+[
+  {
+    "label": "Dashboard",
+    "path": "/dashboard",
+    "icon": "pi pi-palette",
+    "roles": ["admin", "user"]
+  },
+  {
+    "label": "Members",
+    "icon": "pi pi-home",
+    "roles": ["admin"],
+    "submenus": [
+      {
+        "label": "Management",
+        "path": "/member/manage",
+        "roles": ["admin"],
+        "icon": "pi pi-users"
+      }
+    ]
+  },
+  {
+    "label": "Administration",
+    "icon": "admin-icon",
+    "roles": ["admin"],
+    "submenus": [
+      {
+        "label": "Services",
+        "path": "/admin/service",
+        "roles": ["admin"],
+        "icon": "pi pi-cog"
+      }
+    ]
+  }
+]

@@ -11,13 +11,12 @@
     "postinstall": "nuxt prepare --dotenv .env.dev"
   },
   "dependencies": {
-    "@primevue/themes": "^4.2.5",
     "nuxt": "^3.14.1592",
+    "rxjs": "^7.8.1",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
-    "@primevue/nuxt-module": "^4.2.5",
     "sass-embedded": "^1.83.0"
   }
 }

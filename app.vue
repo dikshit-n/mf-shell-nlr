@@ -5,7 +5,7 @@
       <div class="header-actions">
         <i class="pi pi-bell"></i>
         <i class="pi pi-cog"></i>
-        <Button icon="pi pi-user" variant="outlined" severity="contrast" label="Kurta Sengora" />
+        <Button icon="pi pi-user" variant="outlined" severity="contrast" label="Maximilian" />
       </div>
     </template>
     <NuxtPage />
@@ -14,10 +14,9 @@
 
 <script setup>
 import Button from 'primevue/Button'
-  const routes = [
-    { name: 'Service', to: '/administration/service' },
-    { name: 'Members', to: '/member/manage' }
-  ]
+import routes from '@/content/config.json';
+console.log(routes)
+  // const routes = (await queryContent('/config').find())?.[0].body;
 </script>
 
 <style scoped>
