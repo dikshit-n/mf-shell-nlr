@@ -1,11 +1,11 @@
 <template>
-  <NuxtLayout :routes>
+  <NuxtLayout :routes="routes">
     <template #title>HealPros Member Care Management</template>
-    <template>Service Count : {{eventPayload.servicesCount  }}</template>
     <template #headerActions>
       <div class="header-actions">
         <i class="pi pi-bell"></i>
         <i class="pi pi-cog"></i>
+        <span>(Services Count: {{ eventPayload?.servicesCount }})</span>
         <Button icon="pi pi-user" variant="outlined" severity="contrast" label="Maximilian" @click="emitUserEvent"/>
       </div>
     </template>
@@ -14,10 +14,14 @@
 </template>
 
 <script setup>
-import Button from 'primevue/Button'
+import { ref, onMounted } from 'vue';
+import Button from 'primevue/Button';
 import routes from '@/content/config.json';
+
 console.log(routes);
-const eventPayload = ref<any>(null);
+
+let eventPayload = ref(null);
+
 const emitUserEvent = () => {
   const payload = {
     message: "User event emitted!",
@@ -29,12 +33,11 @@ const emitUserEvent = () => {
 
 onMounted(() => {
   console.log("shell mounting");
- eventBus.on("serviceEvent", (payload) => {
+  eventBus.on("serviceEvent", (payload) => {
     console.log("Event Received from service:", payload);
-    eventPayload = payload;
+    eventPayload.value = payload;
   });
 });
-  // const routes = (await queryContent('/config').find())?.[0].body;
 </script>
 
 <style scoped>
@@ -44,4 +47,11 @@ onMounted(() => {
     justify-content: center;
     gap: 10px;
   }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
 </style>
